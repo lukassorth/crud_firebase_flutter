@@ -1,6 +1,6 @@
 import 'package:crud_firebase_flutter/components/user_tile.dart';
-import 'package:crud_firebase_flutter/models/user.dart';
 import 'package:crud_firebase_flutter/provider/users.dart';
+import 'package:crud_firebase_flutter/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,12 +18,12 @@ class UserList extends StatelessWidget {
         ),
         actions: [
           IconButton(
+            icon: Icon(Icons.add),
             onPressed: () {
-              users.put(
-                User(name: 'teste', email: 'email', avatarUrl: '', id: ''),
+              Navigator.of(context).pushNamed(
+                AppRoutes.USER_FORM,
               );
             },
-            icon: Icon(Icons.add),
           ),
         ],
       ),
