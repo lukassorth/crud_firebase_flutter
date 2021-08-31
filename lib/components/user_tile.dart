@@ -1,6 +1,8 @@
 import 'package:crud_firebase_flutter/models/user.dart';
+import 'package:crud_firebase_flutter/provider/users.dart';
 import 'package:crud_firebase_flutter/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class UserTile extends StatelessWidget {
   final User user;
@@ -34,9 +36,32 @@ class UserTile extends StatelessWidget {
               },
             ),
             IconButton(
-              onPressed: () {},
               color: Colors.red,
               icon: Icon(Icons.delete),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (ctx) => AlertDialog(
+                    title: Text('Excluir usuário'),
+                    content: Text('Tem certeza?'),
+                    actions: [
+                      FlatButton(
+                        child: Text('Não'),
+                        onPressed: () => Navigator.of(context).pop(false),
+                      ),
+                      FlatButton(
+                        child: Text('Sim'),
+                        onPressed: () => Navigator.of(context).pop(true),
+                      ),
+                    ],
+                  ),
+                ).then((confirmed) {
+                  //método then como VUEJS
+                  if (confirmed) {
+                    Provider.of<Users>(context, listen: false).remove(user);
+                  }
+                });
+              },
             )
           ],
         ),

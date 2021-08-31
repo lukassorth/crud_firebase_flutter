@@ -1,5 +1,6 @@
 import 'package:crud_firebase_flutter/models/user.dart';
 import 'package:crud_firebase_flutter/provider/users.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class UserForm extends StatelessWidget {
@@ -7,8 +8,21 @@ class UserForm extends StatelessWidget {
 
   final Map<String, String> _formData = {};
 
+  void _loadFormData(User user) {
+    if (user != null) {
+      _formData['id'] = user.id;
+      _formData['name'] = user.name;
+      _formData['email'] = user.email;
+      _formData['avatarUrl'] = user.avatarUrl;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    final User user = ModalRoute.of(context)!.settings.arguments as User;
+
+    _loadFormData(user);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Formulário do Usuário'),
@@ -16,14 +30,21 @@ class UserForm extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.save),
             onPressed: () {
-              _form.currentState!.save();
-              Provider.of<Users>(context).put(User(
-                id: _formData['id'],
-                name: _formData['name'],
-                email: _formData['email'],
-                avatarUrl: _formData['urlAvatar'],
-              ));
-              Navigator.of(context).pop();
+              final isValid = _form.currentState!.validate();
+              if (isValid) {
+                _form.currentState!.save();
+
+                Provider.of<Users>(context, listen: false).put(
+                  User(
+                    id: _formData["id"].toString(),
+                    name: _formData['name'].toString(),
+                    email: _formData['email'].toString(),
+                    avatarUrl: _formData['avatarUrl'].toString(),
+                  ),
+                );
+
+                Navigator.of(context).pop();
+              }
             },
           ),
         ],
@@ -35,16 +56,29 @@ class UserForm extends StatelessWidget {
           child: Column(
             children: [
               TextFormField(
+                initialValue: _formData['name'],
                 decoration: InputDecoration(labelText: 'Nome'),
                 onSaved: (value) => _formData['name'] = value!,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Campo não pode ser nulo';
+                  }
+                },
               ),
               TextFormField(
+                initialValue: _formData['email'],
                 decoration: InputDecoration(labelText: 'E-mail'),
                 onSaved: (value) => _formData['email'] = value!,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Campo não pode ser nulo';
+                  }
+                },
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Url Avatar'),
-                onSaved: (value) => _formData['urlAvatar'] = value!,
+                initialValue: _formData['avatarUrl'],
+                decoration: InputDecoration(labelText: 'Avatar Url'),
+                onSaved: (value) => _formData['avatarUrl'] = value!,
               ),
             ],
           ),
