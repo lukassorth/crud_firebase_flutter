@@ -9,6 +9,7 @@ void main() {
   runApp(MyApp());
 }
 
+// TODO: CRUD Firebase Web cadastro de usuários.
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
