@@ -16,6 +16,19 @@ class _HomePageState extends State<HomePage> {
         title: Center(
           child: Text('Página Principal'),
         ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: IconButton(
+              icon: Icon(Icons.account_circle),
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  AppRoutes.HOME,
+                );
+              },
+            ),
+          )
+        ],
       ),
       body: Center(
         child: Column(
