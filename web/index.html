@@ -94,11 +94,12 @@
       loadMainDartJs();
     }
   </script>
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-analytics.js";
+    <script> "https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js";</script>
+    <script> "https://www.gstatic.com/firebasejs/9.0.1/firebase-analytics.js";</script>
+  
+  <script>
 
-    const firebaseConfig = {
+    var firebaseConfig = {
       apiKey: "AIzaSyAngLlv1mjLag8ehRIOkPcVsuxVlMwzP80",
       authDomain: "fluttercrudfire.firebaseapp.com",
       projectId: "fluttercrudfire",
@@ -109,7 +110,8 @@
     };
   
     // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
+    // const app = initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
   </script>
   <script src="main.dart.js" type="application/javascript"></script>

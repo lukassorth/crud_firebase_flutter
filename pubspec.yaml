@@ -35,6 +35,7 @@ dev_dependencies:
   provider:
   firebase_core: ^1.0.1
   cloud_firestore: ^1.0.1
+  firebase_core_web: ^1.1.0
 
 
 # For information on the generic Dart part of this file, see the
