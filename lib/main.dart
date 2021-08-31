@@ -1,5 +1,6 @@
 import 'package:crud_firebase_flutter/provider/users.dart';
 import 'package:crud_firebase_flutter/routes/app_routes.dart';
+import 'package:crud_firebase_flutter/views/home.dart';
 import 'package:crud_firebase_flutter/views/user_form.dart';
 import 'package:crud_firebase_flutter/views/user_list.dart';
 import 'package:flutter/material.dart';
@@ -21,12 +22,13 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Flutter Crud Firebase',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
         routes: {
-          AppRoutes.HOME: (_) => UserList(),
+          AppRoutes.HOME: (_) => HomePage(),
+          AppRoutes.USER_LIST: (_) => UserList(),
           AppRoutes.USER_FORM: (_) => UserForm(),
         },
       ),
