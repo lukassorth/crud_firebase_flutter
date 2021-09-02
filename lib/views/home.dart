@@ -17,15 +17,17 @@ class _HomePageState extends State<HomePage> {
           child: Text('Página Principal'),
         ),
         actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: IconButton(
-              icon: Icon(Icons.account_circle),
-              onPressed: () {
-                Navigator.of(context).pushNamed(
-                  AppRoutes.HOME,
-                );
-              },
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: IconButton(
+                icon: Icon(Icons.account_circle),
+                onPressed: () {
+                  Navigator.of(context).pushNamed(
+                    AppRoutes.LOGIN,
+                  );
+                },
+              ),
             ),
           )
         ],
