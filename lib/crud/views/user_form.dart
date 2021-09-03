@@ -1,5 +1,5 @@
-import 'package:crud_firebase_flutter/models/user.dart';
-import 'package:crud_firebase_flutter/provider/users.dart';
+import 'package:crud_firebase_flutter/crud/models/user.dart';
+import 'package:crud_firebase_flutter/crud/provider/users.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 

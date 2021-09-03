@@ -1,4 +1,4 @@
-import 'package:crud_firebase_flutter/models/user.dart';
+import 'package:crud_firebase_flutter/crud/models/user.dart';
 
 const DUMMY_USERS = {
   '1': const User(

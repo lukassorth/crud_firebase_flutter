@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:crud_firebase_flutter/data/dummy_users.dart';
-import 'package:crud_firebase_flutter/models/user.dart';
+import 'package:crud_firebase_flutter/crud/models/user.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

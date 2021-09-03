@@ -1,4 +1,4 @@
-import 'package:crud_firebase_flutter/routes/app_routes.dart';
+import 'package:crud_firebase_flutter/crud/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {

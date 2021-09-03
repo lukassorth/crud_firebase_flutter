@@ -1,6 +1,6 @@
-import 'package:crud_firebase_flutter/components/user_tile.dart';
-import 'package:crud_firebase_flutter/provider/users.dart';
-import 'package:crud_firebase_flutter/routes/app_routes.dart';
+import 'package:crud_firebase_flutter/crud/components/user_tile.dart';
+import 'package:crud_firebase_flutter/crud/provider/users.dart';
+import 'package:crud_firebase_flutter/crud/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

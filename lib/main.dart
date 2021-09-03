@@ -1,9 +1,9 @@
-import 'package:crud_firebase_flutter/provider/users.dart';
-import 'package:crud_firebase_flutter/routes/app_routes.dart';
-import 'package:crud_firebase_flutter/views/home.dart';
-import 'package:crud_firebase_flutter/views/login.dart';
-import 'package:crud_firebase_flutter/views/user_form.dart';
-import 'package:crud_firebase_flutter/views/user_list.dart';
+import 'package:crud_firebase_flutter/crud/provider/users.dart';
+import 'package:crud_firebase_flutter/crud/routes/app_routes.dart';
+import 'package:crud_firebase_flutter/crud/views/home.dart';
+import 'package:crud_firebase_flutter/crud/views/login.dart';
+import 'package:crud_firebase_flutter/crud/views/user_form.dart';
+import 'package:crud_firebase_flutter/crud/views/user_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -11,6 +11,7 @@ void main() {
   runApp(MyApp());
 }
 
+// ignore: todo
 // TODO: CRUD Firebase Web cadastro de usuários.
 class MyApp extends StatelessWidget {
   @override
