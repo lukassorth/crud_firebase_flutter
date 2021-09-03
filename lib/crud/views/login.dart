@@ -21,9 +21,26 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Container(
           width: 300,
           height: 450,
+          color: Colors.black12,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Center(
+                child: Container(
+                  width: 150,
+                  height: 150,
+                  decoration: const BoxDecoration(
+                    color: Colors.black38,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(150.0),
+                    ),
+                  ),
+                  child: Icon(
+                    Icons.person,
+                    size: 100.0,
+                  ),
+                ),
+              ),
               Center(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
