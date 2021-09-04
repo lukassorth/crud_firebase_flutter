@@ -1,3 +1,4 @@
+import 'package:crud_firebase_flutter/crud/components/carrossel.dart';
 import 'package:crud_firebase_flutter/crud/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +37,9 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Center(
+              child: CarouselPicker(),
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: FlatButton(
