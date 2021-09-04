@@ -69,33 +69,40 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-                RaisedButton(
-                    color: Theme.of(context).accentColor,
-                    child: Text('Entrar'),
-                    onPressed: () {
-                      auth
-                          .signInWithEmailAndPassword(
-                              email: _email, password: _password)
-                          .then((_) {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (context) => DashboardScreen()));
-                      });
-                    }),
-                RaisedButton(
-                  color: Theme.of(context).accentColor,
+              RaisedButton(
+                  color: Colors.black,
+                  child: Text('Entrar'),
+                  onPressed: () {
+                    auth
+                        .signInWithEmailAndPassword(
+                            email: _email, password: _password)
+                        .then((_) {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => DashboardScreen(),
+                        ),
+                      );
+                    });
+                  }),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12.0),
+                child: RaisedButton(
+                  color: Colors.black,
                   child: Text('Cadastrar'),
                   onPressed: () {
                     auth
                         .createUserWithEmailAndPassword(
                             email: _email, password: _password)
                         .then((_) {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => DashboardScreen()));
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => DashboardScreen(),
+                        ),
+                      );
                     });
                   },
-                )
-              ])
+                ),
+              )
             ],
           ),
         ),

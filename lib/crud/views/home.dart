@@ -1,4 +1,5 @@
 import 'package:crud_firebase_flutter/crud/components/carrossel.dart';
+import 'package:crud_firebase_flutter/crud/data/login_user.dart';
 import 'package:crud_firebase_flutter/crud/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -37,6 +38,11 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Container(
+              child: Center(
+                child: UsuarioLogado(),
+              ),
+            ),
             Center(
               child: CarouselPicker(),
             ),
