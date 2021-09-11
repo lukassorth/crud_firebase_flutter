@@ -20,6 +20,7 @@ class _UsuarioLogadoState extends State<UsuarioLogado> {
           ),
           Center(
             child: RaisedButton(
+              child: Text('User'),
               onPressed: () {
                 if (currentUser != null) {
                   print(currentUser);
@@ -27,7 +28,6 @@ class _UsuarioLogadoState extends State<UsuarioLogado> {
                   print('Não logado');
                 }
               },
-              child: Text('User'),
             ),
           ),
         ],
