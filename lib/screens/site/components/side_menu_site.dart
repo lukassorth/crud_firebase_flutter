@@ -1,3 +1,4 @@
+import 'package:crud_firebase_flutter/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -9,6 +10,7 @@ class SideMenuSite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: bgDBelle,
       child: ListView(
         children: [
           DrawerHeader(
@@ -16,7 +18,7 @@ class SideMenuSite extends StatelessWidget {
           ),
           DrawerListTileSite(
             title: "Home",
-            svgSrc: "assets/icons/home.svg",
+            svgSrc: "assets/icons/pdf_file.svg",
             press: () {},
           ),
           DrawerListTileSite(
@@ -59,12 +61,12 @@ class DrawerListTileSite extends StatelessWidget {
       horizontalTitleGap: 0.0,
       leading: SvgPicture.asset(
         svgSrc,
-        color: Colors.white54,
+        color: Colors.black,
         height: 16,
       ),
       title: Text(
         title,
-        style: TextStyle(color: Colors.white54),
+        style: TextStyle(color: Colors.black),
       ),
     );
   }

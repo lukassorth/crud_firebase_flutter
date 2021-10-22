@@ -10,7 +10,8 @@ class SiteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: context.read<MenuController>().drawerSite,
+      key: context.read<MenuController>().scaffoldKey,
+      drawer: SideMenuSite(),
       body: SafeArea(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +25,7 @@ class SiteScreen extends StatelessWidget {
               ), */
             Expanded(
               // It takes 5/6 part of the screen
-              // flex: 5,
+              flex: 5,
               child: HeaderSite(),
             ),
           ],
