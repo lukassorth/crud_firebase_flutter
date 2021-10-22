@@ -27,15 +27,15 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Admin Panel',
         theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: bgColor,
+          scaffoldBackgroundColor: principalDBelle,
           textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
               .apply(bodyColor: Colors.white),
           canvasColor: secondaryColor,
         ),
-        home: SiteScreen(),
+        home: LoginScreen(),
         routes: {
-          // AppRoutes.SITE: (_) => SiteScreen(),
-          AppRoutes.LOGIN: (_) => LoginScreen(),
+          AppRoutes.SITE: (_) => SiteScreen(),
+          // AppRoutes.LOGIN: (_) => LoginScreen(),
           AppRoutes.DASHBOARD: (_) => MainScreen(),
         },
       ),
