@@ -27,7 +27,11 @@ class _HeaderSiteState extends State<HeaderSite> {
         if (Responsive.isDesktop(context))
           Padding(
             padding: const EdgeInsets.only(left: 200.0),
-            child: Image.asset("assets/images/logo_miniatura.png"),
+            child: IconButton(
+              icon: Image.asset("assets/images/logo_miniatura.png"),
+              onPressed: () {},
+              iconSize: 120.0,
+            ),
           ),
         Spacer(),
         if (Responsive.isDesktop(context))
