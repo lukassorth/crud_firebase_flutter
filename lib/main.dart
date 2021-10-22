@@ -25,17 +25,17 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Admin Panel',
-        theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: principalDBelle,
+        title: "D'Belle Haus - Móveis Sob Medida",
+        theme: ThemeData.light().copyWith(
+          scaffoldBackgroundColor: bgDBelle,
           textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
-              .apply(bodyColor: Colors.white),
+              .apply(bodyColor: Colors.black),
           canvasColor: secondaryColor,
         ),
-        home: LoginScreen(),
+        home: SiteScreen(),
         routes: {
-          AppRoutes.SITE: (_) => SiteScreen(),
-          // AppRoutes.LOGIN: (_) => LoginScreen(),
+          // AppRoutes.SITE: (_) => SiteScreen(),
+          AppRoutes.LOGIN: (_) => LoginScreen(),
           AppRoutes.DASHBOARD: (_) => MainScreen(),
         },
       ),

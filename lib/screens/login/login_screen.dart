@@ -19,18 +19,18 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Center(
         child: Container(
           width: 350,
+          height: 450,
+          // decoration: BoxDecoration(
+          //   border: Border.all(color: Colors.black),
+          // ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(
-                      "assets/images/logo.png",
-                      scale: 0.8,
-                    ),
+                  Image.asset(
+                    "assets/images/logo_miniatura.png",
                   ),
                   Text('Seja bem-vindo de volta'),
                 ],
@@ -65,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
                 RaisedButton(
-                    color: secundariaDBelle,
+                    color: principalDBelle,
                     child: Text('Entrar'),
                     onPressed: () {
                       auth

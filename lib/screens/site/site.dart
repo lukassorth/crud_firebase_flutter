@@ -1,28 +1,31 @@
+import 'package:crud_firebase_flutter/controllers/MenuController.dart';
+import 'package:crud_firebase_flutter/screens/site/components/header.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class SiteScreen extends StatefulWidget {
-  SiteScreen({Key? key}) : super(key: key);
+import '../../responsive.dart';
 
-  @override
-  _SiteScreenState createState() => _SiteScreenState();
-}
-
-class _SiteScreenState extends State<SiteScreen> {
+class SiteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Expanded(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+    return Scaffold(
+      key: context.read<MenuController>().scaffoldKey,
+      body: SafeArea(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: Text(
-                'Olá Mundo',
-                style: TextStyle(
-                  color: Colors.blue,
-                ),
-              ),
+            // We want this side menu only for large screen
+            // if (!Responsive.isDesktop(context))
+            Expanded(
+              // default flex = 1
+              // and it takes 1/6 part of the screen
+              child: Header(),
             ),
+            // Expanded(
+            //   // It takes 5/6 part of the screen
+            //   flex: 5,
+            //   child: DashboardScreen(),
+            // ),
           ],
         ),
       ),
