@@ -30,7 +30,7 @@ class _HeaderSiteState extends State<HeaderSite> {
             child: Image.asset("assets/images/logo_miniatura.png"),
           ),
         Spacer(),
-        if (!Responsive.isMobile(context))
+        if (Responsive.isDesktop(context))
           Row(
             children: [
               Padding(
