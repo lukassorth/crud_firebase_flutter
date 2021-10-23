@@ -1,4 +1,5 @@
 import 'package:crud_firebase_flutter/controllers/MenuController.dart';
+import 'package:crud_firebase_flutter/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
 
@@ -29,7 +30,12 @@ class _HeaderSiteState extends State<HeaderSite> {
             padding: const EdgeInsets.only(left: 200.0),
             child: IconButton(
               icon: Image.asset("assets/images/logo_miniatura.png"),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                );
+              },
               iconSize: 120.0,
             ),
           ),

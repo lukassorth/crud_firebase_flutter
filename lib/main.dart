@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: bgDBelle,
           textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
               .apply(bodyColor: Colors.black),
-          canvasColor: secondaryColor,
+          canvasColor: bgDBelle,
         ),
         home: SiteScreen(),
         routes: {

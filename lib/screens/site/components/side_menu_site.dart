@@ -10,7 +10,6 @@ class SideMenuSite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: bgDBelle,
       child: ListView(
         children: [
           DrawerHeader(
@@ -45,7 +44,6 @@ class SideMenuSite extends StatelessWidget {
 class DrawerListTileSite extends StatelessWidget {
   const DrawerListTileSite({
     Key? key,
-    // For selecting those three line once press "Command+D"
     required this.title,
     required this.svgSrc,
     required this.press,
