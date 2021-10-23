@@ -1,4 +1,9 @@
 import 'package:crud_firebase_flutter/constants.dart';
+import 'package:crud_firebase_flutter/screens/login/login_screen.dart';
+import 'package:crud_firebase_flutter/screens/site/components/contato.dart';
+import 'package:crud_firebase_flutter/screens/site/components/home.dart';
+import 'package:crud_firebase_flutter/screens/site/components/projetos.dart';
+import 'package:crud_firebase_flutter/screens/site/components/sobre.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -13,27 +18,56 @@ class SideMenuSite extends StatelessWidget {
       child: ListView(
         children: [
           DrawerHeader(
-            child: Image.asset("assets/images/logo_miniatura.png"),
+            child: IconButton(
+              icon: Image.asset("assets/images/logo_miniatura.png"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                );
+              },
+              iconSize: 120.0,
+            ),
           ),
           DrawerListTileSite(
             title: "Home",
             svgSrc: "assets/icons/pdf_file.svg",
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomeSite()),
+              );
+            },
           ),
           DrawerListTileSite(
             title: "Projetos",
             svgSrc: "assets/icons/menu_tran.svg",
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProjetosSite()),
+              );
+            },
           ),
           DrawerListTileSite(
             title: "Sobre",
             svgSrc: "assets/icons/menu_task.svg",
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SobreSite()),
+              );
+            },
           ),
           DrawerListTileSite(
             title: "Contato",
             svgSrc: "assets/icons/menu_doc.svg",
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ContatoSite()),
+              );
+            },
           ),
         ],
       ),

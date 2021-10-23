@@ -1,4 +1,5 @@
 import 'package:crud_firebase_flutter/screens/main/main_screen.dart';
+import 'package:crud_firebase_flutter/screens/site/site.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -29,8 +30,15 @@ class _LoginScreenState extends State<LoginScreen> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    "assets/images/logo_miniatura.png",
+                  IconButton(
+                    icon: Image.asset("assets/images/logo_miniatura.png"),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SiteScreen()),
+                      );
+                    },
+                    iconSize: 120.0,
                   ),
                   Text('Seja bem-vindo de volta'),
                 ],

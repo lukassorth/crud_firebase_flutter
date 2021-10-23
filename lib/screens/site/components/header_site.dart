@@ -1,5 +1,9 @@
 import 'package:crud_firebase_flutter/controllers/MenuController.dart';
 import 'package:crud_firebase_flutter/screens/login/login_screen.dart';
+import 'package:crud_firebase_flutter/screens/site/components/contato.dart';
+import 'package:crud_firebase_flutter/screens/site/components/home.dart';
+import 'package:crud_firebase_flutter/screens/site/components/projetos.dart';
+import 'package:crud_firebase_flutter/screens/site/components/sobre.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
 
@@ -46,7 +50,12 @@ class _HeaderSiteState extends State<HeaderSite> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomeSite()),
+                    );
+                  },
                   child: Text(
                     'Home',
                     style: TextStyle(color: Colors.black),
@@ -56,7 +65,12 @@ class _HeaderSiteState extends State<HeaderSite> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ProjetosSite()),
+                    );
+                  },
                   child: Text(
                     'Projetos',
                     style: TextStyle(color: Colors.black),
@@ -66,7 +80,12 @@ class _HeaderSiteState extends State<HeaderSite> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SobreSite()),
+                    );
+                  },
                   child: Text(
                     'Sobre',
                     style: TextStyle(color: Colors.black),
@@ -76,7 +95,12 @@ class _HeaderSiteState extends State<HeaderSite> {
               Padding(
                 padding: const EdgeInsets.only(right: 200.0),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ContatoSite()),
+                    );
+                  },
                   child: Text(
                     'Contato',
                     style: TextStyle(color: Colors.black),

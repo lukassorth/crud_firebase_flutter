@@ -1,9 +1,9 @@
 import 'authentication.dart';
 
 class Repositorio {
-  final _authRepositorio = Authentication();
+  final _authResources = Authentication();
 
   //! Autenticação
   Stream<FirebaseUser> get onAuthStateChange =>
-      _authRepositorio.onAuthStateChange;
+      _authResources.onAuthStateChange;
 }
