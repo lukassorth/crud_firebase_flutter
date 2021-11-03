@@ -23,7 +23,7 @@ class _HeaderSiteState extends State<HeaderSite> {
       children: [
         if (!Responsive.isDesktop(context))
           Padding(
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(2.0),
             child: IconButton(
               icon: Icon(Icons.menu),
               onPressed: context.read<MenuController>().controlMenu,
@@ -34,13 +34,13 @@ class _HeaderSiteState extends State<HeaderSite> {
             padding: const EdgeInsets.only(left: 200.0),
             child: IconButton(
               icon: Image.asset("assets/images/logo_miniatura.png"),
+              iconSize: 100.0,
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => LoginScreen()),
                 );
               },
-              iconSize: 120.0,
             ),
           ),
         Spacer(),
