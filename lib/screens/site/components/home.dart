@@ -21,6 +21,7 @@ class HomeSite extends StatelessWidget {
                 image: AssetImage("images/cozinha_laranja.jpeg"),
                 fit: BoxFit.cover,
                 repeat: ImageRepeat.noRepeat,
+                opacity: 0.5,
               ),
             ),
           ),

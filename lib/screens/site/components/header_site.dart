@@ -32,15 +32,10 @@ class _HeaderSiteState extends State<HeaderSite> {
         if (Responsive.isDesktop(context))
           Padding(
             padding: const EdgeInsets.only(left: 200.0),
-            child: IconButton(
-              icon: Image.asset("assets/images/logo_miniatura.png"),
-              iconSize: 100.0,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
-                );
-              },
+            child: Image.asset(
+              "assets/images/logo_miniatura.png",
+              width: 100.0,
+              height: 100.0,
             ),
           ),
         Spacer(),
@@ -50,6 +45,12 @@ class _HeaderSiteState extends State<HeaderSite> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextButton(
+                  onLongPress: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                    );
+                  },
                   onPressed: () {
                     Navigator.push(
                       context,
