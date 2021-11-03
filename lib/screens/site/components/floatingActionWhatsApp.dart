@@ -11,17 +11,18 @@ class FloatingActionWhatsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        if (Responsive.isDesktop(context))
+        if (!Responsive.isMobile(context))
           abrirUrl(
-              "https://api.whatsapp.com/send?phone=5551999098675&text=Ol%C3%A1%2C%20eu%20gostaria%20de%20um%20or%C3%A7amento%20de%20M%C3%B3veis%20Sob%20Medida!");
-        if (Responsive.isMobile(context)) abrirWhatsApp();
+              "https://api.whatsapp.com/send?phone=5551999098675&text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20uma%20proposta%20de%20or%C3%A7amento%20de%20M%C3%B3veis%20Sob%20Medida!");
+        else
+          abrirWhatsApp();
       },
       child: Image.asset(
         "images/whats.png",
         color: Colors.white,
       ),
       backgroundColor: Colors.green,
-      tooltip: "Chama no Whats",
+      tooltip: "Que tal conversarmos?",
     );
   }
 }
@@ -36,7 +37,7 @@ abrirUrl(url) async {
 
 abrirWhatsApp() async {
   var whatsappUrl =
-      "whatsapp://send?phone=+5551999098675&text=Ol%C3%A1%2C%20eu%20gostaria%20de%20um%20or%C3%A7amento%20de%20M%C3%B3veis%20Sob%20Medida!";
+      "whatsapp://send?phone=+5551999098675&text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20uma%20proposta%20de%20or%C3%A7amento%20de%20M%C3%B3veis%20Sob%20Medida!";
 
   if (await canLaunch(whatsappUrl)) {
     await launch(whatsappUrl);
