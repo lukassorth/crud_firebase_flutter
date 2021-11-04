@@ -1,6 +1,7 @@
 import 'package:crud_firebase_flutter/screens/site/components/floatingActionWhatsApp.dart';
 import 'package:crud_firebase_flutter/screens/site/components/header_site.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeSite extends StatelessWidget {
   const HomeSite({
@@ -28,14 +29,24 @@ class HomeSite extends StatelessWidget {
           Column(
             children: [
               HeaderSite(),
+              SizedBox(
+                height: 300.0,
+              ),
               Center(
                 child: Text(
-                  "D'Belle Haus",
+                  "O melhor em cada detalhe!",
                   style: TextStyle(
-                    fontSize: 85.0,
-                  ),
+                      fontSize: 62.0,
+                      decorationStyle: TextDecorationStyle.double),
                 ),
               ),
+              Column(
+                children: [
+                  Container(
+                    child: Text("Móveis sob Medida"),
+                  )
+                ],
+              )
             ],
           )
         ],

@@ -20,6 +20,8 @@ class FloatingActionWhatsApp extends StatelessWidget {
       child: Image.asset(
         "images/whats.png",
         color: Colors.white,
+        height: 35.0,
+        width: 35.0,
       ),
       backgroundColor: Colors.green,
       tooltip: "Que tal conversarmos?",

@@ -1,3 +1,4 @@
+import 'package:crud_firebase_flutter/responsive.dart';
 import 'package:flutter/material.dart';
 
 class ListImages extends StatelessWidget {
@@ -14,9 +15,17 @@ class ListImages extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       //este widget tornará seu contêiner clicável
-      onTap: () {},
+      onTap: () {
+        print(name);
+        showModalBottomSheet(
+          context: context,
+          builder: (ctx) => _buildBottomSheet(ctx),
+        );
+      },
       child: Container(
-        width: 350.0,
+        width: ((Responsive.isMobile(context))
+            ? 320.0
+            : MediaQuery.of(context).size.width / 4.0),
         decoration: BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(imgUrl),
@@ -37,4 +46,19 @@ class ListImages extends StatelessWidget {
       ),
     );
   }
+}
+
+Container _buildBottomSheet(BuildContext context) {
+  return Container(
+    height: MediaQuery.of(context).size.height * 0.9,
+    child: ListView(
+      children: [
+        ListTile(
+          title: Text(
+            "Imagens",
+          ),
+        )
+      ],
+    ),
+  );
 }

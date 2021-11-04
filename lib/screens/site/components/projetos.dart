@@ -9,8 +9,6 @@ List<String> ImgUrl = [
   "https://images.unsplash.com/photo-1521783593447-5702b9bfd267?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=904&q=80",
   "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80",
   "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80",
-  "https://images-na.ssl-images-amazon.com/images/I/71jG%2Be7roXL._AC_SL1500_.jpg",
-  "https://images-na.ssl-images-amazon.com/images/I/511U11XLcrL._AC_SL1000_.jpg"
 ];
 
 class ProjetosSite extends StatefulWidget {
@@ -23,8 +21,6 @@ class ProjetosSite extends StatefulWidget {
 }
 
 class _ProjetosSiteState extends State<ProjetosSite> {
-  final _controller = new ScrollController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,14 +41,14 @@ class _ProjetosSiteState extends State<ProjetosSite> {
           Column(
             children: [
               HeaderSite(),
-              Center(
-                child: Text(
-                  "NOSSOS PROJETOS",
-                  style: TextStyle(
-                    fontSize: 45.0,
-                  ),
-                ),
-              ),
+              // Center(
+              //   child: Text(
+              //     "",
+              //     style: TextStyle(
+              //       fontSize: 45.0,
+              //     ),
+              //   ),
+              // ),
               if (!Responsive.isDesktop(context))
                 Expanded(
                   child: Container(
@@ -88,11 +84,10 @@ class _ProjetosSiteState extends State<ProjetosSite> {
               else
                 Expanded(
                   child: Container(
-                    width: double.maxFinite,
+                    width: MediaQuery.of(context).size.width,
                     height:
                         750.0, //quando você deseja criar uma lista, você deve precisar a altura e largura de seu contêiner
                     child: ListView(
-                      controller: _controller,
                       scrollDirection: Axis.horizontal,
                       //este faz com que o scroll seja horizontal
                       children: [
