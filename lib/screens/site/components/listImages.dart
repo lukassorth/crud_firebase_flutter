@@ -16,10 +16,16 @@ class ListImages extends StatelessWidget {
     return InkWell(
       //este widget tornará seu contêiner clicável
       onTap: () {
-        print(name);
+        // print(name);
         showModalBottomSheet(
           context: context,
-          builder: (ctx) => _buildBottomSheet(ctx),
+          builder: (ctx) => (name == 'Closet'
+              ? _buildBottomSheetCloset(ctx)
+              : name == 'Bathroom'
+                  ? _buildBottomSheetBathroom(ctx)
+                  : name == 'Living Room'
+                      ? _buildBottomSheetLiving(ctx)
+                      : _buildBottomSheetKitchen(ctx)),
         );
       },
       child: Container(
@@ -48,14 +54,59 @@ class ListImages extends StatelessWidget {
   }
 }
 
-Container _buildBottomSheet(BuildContext context) {
+Container _buildBottomSheetCloset(BuildContext context) {
   return Container(
     height: MediaQuery.of(context).size.height * 0.9,
     child: ListView(
       children: [
         ListTile(
           title: Text(
-            "Imagens",
+            "Closet",
+          ),
+        )
+      ],
+    ),
+  );
+}
+
+Container _buildBottomSheetBathroom(BuildContext context) {
+  return Container(
+    height: MediaQuery.of(context).size.height * 0.9,
+    child: ListView(
+      children: [
+        ListTile(
+          title: Text(
+            "Bathroom",
+          ),
+        )
+      ],
+    ),
+  );
+}
+
+Container _buildBottomSheetLiving(BuildContext context) {
+  return Container(
+    height: MediaQuery.of(context).size.height * 0.9,
+    child: ListView(
+      children: [
+        ListTile(
+          title: Text(
+            "Living",
+          ),
+        )
+      ],
+    ),
+  );
+}
+
+Container _buildBottomSheetKitchen(BuildContext context) {
+  return Container(
+    height: MediaQuery.of(context).size.height * 0.9,
+    child: ListView(
+      children: [
+        ListTile(
+          title: Text(
+            "Kitchen",
           ),
         )
       ],

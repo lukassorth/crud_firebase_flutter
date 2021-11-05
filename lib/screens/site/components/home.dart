@@ -30,21 +30,18 @@ class HomeSite extends StatelessWidget {
             children: [
               HeaderSite(),
               SizedBox(
-                height: 300.0,
+                height: 250.0,
               ),
-              Center(
-                child: Text(
-                  "O melhor em cada detalhe!",
-                  style: TextStyle(
-                      fontSize: 62.0,
-                      decorationStyle: TextDecorationStyle.double),
-                ),
+              Text(
+                "O melhor em cada detalhe!",
+                style: TextStyle(
+                    fontSize: 62.0,
+                    decorationStyle: TextDecorationStyle.double),
               ),
               Column(
                 children: [
-                  Container(
-                    child: Text("Móveis sob Medida"),
-                  )
+                  Text("Móveis sob Medida", style: TextStyle(fontSize: 32.0)),
+                  Text("Design de interiores", style: TextStyle(fontSize: 25.0))
                 ],
               )
             ],
