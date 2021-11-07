@@ -4,6 +4,7 @@ import 'package:crud_firebase_flutter/screens/site/components/contato.dart';
 import 'package:crud_firebase_flutter/screens/site/components/home.dart';
 import 'package:crud_firebase_flutter/screens/site/components/projetos.dart';
 import 'package:crud_firebase_flutter/screens/site/components/sobre.dart';
+import 'package:crud_firebase_flutter/screens/uploadImage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
 
@@ -94,7 +95,7 @@ class _HeaderSiteState extends State<HeaderSite> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(right: 200.0),
+                padding: const EdgeInsets.only(right: 8.0),
                 child: TextButton(
                   onPressed: () {
                     Navigator.push(
@@ -104,6 +105,21 @@ class _HeaderSiteState extends State<HeaderSite> {
                   },
                   child: Text(
                     'Contato',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 200.0),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => UploadImage()),
+                    );
+                  },
+                  child: Text(
+                    'Upload Imagem Teste',
                     style: TextStyle(color: Colors.black),
                   ),
                 ),
