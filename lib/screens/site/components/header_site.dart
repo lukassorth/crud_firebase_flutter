@@ -4,7 +4,7 @@ import 'package:crud_firebase_flutter/screens/site/components/contato.dart';
 import 'package:crud_firebase_flutter/screens/site/components/home.dart';
 import 'package:crud_firebase_flutter/screens/site/components/projetos.dart';
 import 'package:crud_firebase_flutter/screens/site/components/sobre.dart';
-import 'package:crud_firebase_flutter/screens/uploadImage.dart';
+import 'package:crud_firebase_flutter/screens/upload/upload.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
 
@@ -115,7 +115,7 @@ class _HeaderSiteState extends State<HeaderSite> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => UploadImage()),
+                      MaterialPageRoute(builder: (context) => UploadFile()),
                     );
                   },
                   child: Text(
